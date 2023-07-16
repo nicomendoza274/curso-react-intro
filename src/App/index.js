@@ -1,9 +1,10 @@
 import React from 'react';
-import { TodoCounter } from './TodoCounter'
-import { TodoSearch } from './TodoSearch'
-import { CreateTodoButton } from './CreateTodoButton'
-import { TodoItem } from './TodoItem'
-import { TodoList } from './TodoList'
+import { TodoCounter } from '../TodoCounter'
+import { TodoSearch } from '../TodoSearch'
+import { CreateTodoButton } from '../CreateTodoButton'
+import { TodoItem } from '../TodoItem'
+import { TodoList } from '../TodoList'
+import { useLocalStora } from './useLocalStorage'
 
 // const defaultTodos = [
 //   { text: 'Cortar Cebolla', completed: true },
@@ -16,27 +17,6 @@ import { TodoList } from './TodoList'
 // localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));  
 // localStorage.removeItem('TODOS_V1');
 
-function useLocalStora(itemName, initialValue) {
-
-  const localStorageItem = localStorage.getItem(itemName);
-  let parsedItem;
-
-  if (!localStorageItem) {
-    localStorage.setItem(itemName, JSON.stringify(initialValue))
-    parsedItem = [];
-  } else {
-    parsedItem = JSON.parse(localStorageItem);
-  }
-
-  const [item, setItem] = React.useState(parsedItem);
-
-  const saveItem = (newItem) => {
-    localStorage.setItem(itemName, JSON.stringify(newItem));
-    setItem(newItem);
-  }
-
-  return [item, saveItem];
-}
 
 function App() {
   const [todos, saveTodos] = useLocalStora('TODOS_V1', []);
