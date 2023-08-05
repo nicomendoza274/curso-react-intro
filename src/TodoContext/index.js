@@ -20,6 +20,15 @@ function TodoProvider({ children }) {
     const getNewTodoIndx = (newTodos, text) => {
       return newTodos.findIndex(todo => todo.text === text)
     }
+
+    const addTodo = (text) => {
+      const newTodos = [...todos];
+      newTodos.push({
+        text,
+        completed: false
+      })
+      saveTodos(newTodos)
+    }
   
     const completeTodo = (text) => {
       const newTodos = [...todos];
@@ -52,7 +61,8 @@ function TodoProvider({ children }) {
             delteTodo,
             openModal,
             setOpenModal,
-            toggleModal
+            toggleModal,
+            addTodo
         }}>
             {children}
         </TodoContext.Provider>

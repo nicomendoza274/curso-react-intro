@@ -2,6 +2,7 @@ import React from 'react'
 import { TodoCounter } from '../TodoCounter'
 import { TodoSearch } from '../TodoSearch'
 import { CreateTodoButton } from '../CreateTodoButton'
+import { TodoForm } from '../TodoForm'
 import { TodoItem } from '../TodoItem'
 import { TodoList } from '../TodoList'
 import { TodosLoading } from '../TodosLoading'
@@ -51,7 +52,7 @@ function AppUI() {
 
             { openModal && (
                 <Modal>
-                    La funcionalidad de agregar TODO
+                    <TodoForm />
                 </Modal>
             ) }
         </>
