@@ -18,8 +18,7 @@ function AppUI() {
         searchedTodos,
         completeTodo,
         delteTodo,
-        openModal,
-        setOpenModal
+        openModal
     } = React.useContext(TodoContext)
 
     return (
