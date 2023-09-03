@@ -23,7 +23,10 @@ function AppUI() {
         totalTodos,
         completedTodos,
         searchValue, 
-        setSearchValue
+        setSearchValue,
+        toggleModal,
+        addTodo, 
+        setOpenModal
     } = React.useContext(TodoContext)
 
     return (
@@ -60,11 +63,14 @@ function AppUI() {
                 ))}
             </TodoList>
     
-            <CreateTodoButton />
+            <CreateTodoButton toggleModal={toggleModal} />
 
             { openModal && (
                 <Modal>
-                    <TodoForm />
+                    <TodoForm 
+                        addTodo={addTodo}
+                        setOpenModal={setOpenModal}
+                    />
                 </Modal>
             ) }
         </>
