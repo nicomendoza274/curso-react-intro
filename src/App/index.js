@@ -49,7 +49,7 @@ function App() {
             searchedTodos={searchedTodos}
             onError={() => <TodosError />}
             onLoading={() => <TodosLoading />}
-            onEmtyTodos={() => <EmptyTodos />}
+            onEmptyTodos={() => <EmptyTodos />}
             render={todo => (
                 <TodoItem 
                     key={todo.text} 
