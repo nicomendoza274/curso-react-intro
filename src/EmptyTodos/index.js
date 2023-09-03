@@ -3,7 +3,7 @@ import './EmptyTodos.css';
 function EmptyTodos() {
 
     return (
-        <p>¡Comienza a crear Todos!</p>
+        <p className='EmptyTodos'>¡Comienza a crear Todos!</p>
     );
 }
 
