@@ -12,7 +12,7 @@ import { EmptyTodos } from '../EmptyTodos'
 import { EmptySearchResults } from '../EmptySearchResults'
 import { TodoHeader } from '../TodoHeader'
 import { Modal } from '../Modal'
-import { ChangeAlerWithStorageListener } from '../ChangeAlert'
+import { ChangeAlert } from '../ChangeAlert'
 
 function App() {
   const {
@@ -90,7 +90,7 @@ function App() {
             </Modal>
         ) }
         
-        <ChangeAlerWithStorageListener  
+        <ChangeAlert  
             sincronize={sincronizeTodos}
         />
     </>
