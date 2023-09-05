@@ -12,6 +12,7 @@ import { EmptyTodos } from '../EmptyTodos'
 import { EmptySearchResults } from '../EmptySearchResults'
 import { TodoHeader } from '../TodoHeader'
 import { Modal } from '../Modal'
+import { ChangeAlerWithStorageListener } from '../ChangeAlert'
 
 function App() {
   const {
@@ -27,7 +28,8 @@ function App() {
       setSearchValue,
       toggleModal,
       addTodo, 
-      setOpenModal
+      setOpenModal,
+      sincronizeTodos
   } = useTodos()
 
 
@@ -87,6 +89,10 @@ function App() {
                 />
             </Modal>
         ) }
+        
+        <ChangeAlerWithStorageListener  
+            sincronize={sincronizeTodos}
+        />
     </>
   );
 }
