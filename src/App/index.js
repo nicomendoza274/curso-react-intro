@@ -58,15 +58,6 @@ function App() {
             onEmptySearchResults={
                 (searchText) => <EmptySearchResults searchText={searchText} />
             }
-            // render={todo => (
-            //     <TodoItem 
-            //         key={todo.text} 
-            //         text={todo.text} 
-            //         completed={todo.completed}
-            //         onComplete={() => completeTodo(todo.text)}
-            //         onDelete={() => delteTodo(todo.text)}
-            //     />
-            // )}
         >
             {todo => (
                 <TodoItem 

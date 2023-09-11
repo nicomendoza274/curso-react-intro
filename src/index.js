@@ -6,4 +6,4 @@ import App from './App';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App saludo="Buenas" nombre="Nico"/>);
+root.render(<App/>);
