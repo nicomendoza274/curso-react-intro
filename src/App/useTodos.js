@@ -52,22 +52,27 @@ function useTodos() {
       setOpenModal(!openModal)
     }
 
-    return {
-      loading,
+    const states = {
       error,
-      completedTodos,
+      loading,
       totalTodos,
+      completedTodos,
       searchValue,
-      setSearchValue,
       searchedTodos,
+      openModal,
+    }
+
+    const stateUpdaters = {
+      setSearchValue,
+      addTodo,
       completeTodo,
       delteTodo,
-      openModal,
       setOpenModal,
       toggleModal,
-      addTodo,
       sincronizeTodos
     }
+    
+    return {states, stateUpdaters}
 }
 
 export { useTodos };

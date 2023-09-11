@@ -16,22 +16,29 @@ import { ChangeAlert } from '../ChangeAlert'
 
 function App() {
   const {
-      loading,
-      error,
-      searchedTodos,
-      completeTodo,
-      delteTodo,
-      openModal,
-      totalTodos,
-      completedTodos,
-      searchValue, 
-      setSearchValue,
-      toggleModal,
-      addTodo, 
-      setOpenModal,
-      sincronizeTodos
+    states,
+    stateUpdaters
   } = useTodos()
 
+  const {
+    error,
+    loading,
+    searchedTodos,
+    totalTodos,
+    completeTodo,
+    completedTodos,
+    openModal,
+    searchValue
+  } = states
+
+  const {
+    setOpenModal,
+    addTodo, 
+    delteTodo,
+    setSearchValue,
+    toggleModal,
+    sincronizeTodos
+  } = stateUpdaters
 
   return (
     <>
