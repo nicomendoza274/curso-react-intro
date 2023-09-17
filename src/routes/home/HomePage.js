@@ -71,6 +71,7 @@ const {
                     key={todo.text} 
                     text={todo.text} 
                     completed={todo.completed}
+                    onEdit={() => console.log('Editar todo')}
                     onComplete={() => completeTodo(todo.text)}
                     onDelete={() => delteTodo(todo.text)}
                 />
