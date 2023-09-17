@@ -1,14 +1,12 @@
 import React from 'react';
 import './CreateTodoButton.css';
 
-function CreateTodoButton({toggleModal}) {
+function CreateTodoButton(props) {
 
     return (
         <button 
             className='CreateTodoButton'
-            onClick={(event) => {
-                toggleModal()
-            }}
+            onClick={props.onClick}
         >+</button>
     );
 }
