@@ -8,7 +8,7 @@ function useTodos() {
       sincronizeItem: sincronizeTodos,
       loading,
       error, 
-    } = useLocalStorage('TODOS_V1', []);
+    } = useLocalStorage('TODOS_V2', []);
     const [searchValue, setSearchValue] = React.useState('');
     const [openModal, setOpenModal] = React.useState(false);
   
@@ -21,29 +21,31 @@ function useTodos() {
       return todoText.includes(searchText);
     })
   
-    const getNewTodoIndx = (newTodos, text) => {
-      return newTodos.findIndex(todo => todo.text === text)
+    const getNewTodoIndex = (newTodos, id) => {
+      return newTodos.findIndex(todo => todo.id === id)
     }
 
     const addTodo = (text) => {
-      const newTodos = [...todos];
+      const id = newTodoId(todos)
+      const newTodos = [...todos]
       newTodos.push({
         text,
-        completed: false
+        completed: false,
+        id,
       })
       saveTodos(newTodos)
     }
   
-    const completeTodo = (text) => {
+    const completeTodo = (id) => {
       const newTodos = [...todos];
-      const todoIndex = getNewTodoIndx(newTodos, text)
+      const todoIndex = getNewTodoIndex(newTodos, id)
       newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
       saveTodos(newTodos)
     }
   
-    const delteTodo = (text) => {
+    const delteTodo = (id) => {
       const newTodos = [...todos];
-      const todoIndex = getNewTodoIndx(newTodos, text)
+      const todoIndex = getNewTodoIndex(newTodos, id)
       newTodos.splice(todoIndex,1)
       saveTodos(newTodos)
     }
@@ -73,6 +75,16 @@ function useTodos() {
     }
     
     return {states, stateUpdaters}
+}
+
+function newTodoId(todoList) {
+  if (!todoList.length) {
+    return 1
+  }
+  
+  const idList = todoList.map(todo => todo.id)
+  const idMax = Math.max(...idList)
+  return idMax + 1
 }
 
 export { useTodos };
