@@ -25,14 +25,14 @@ function App() {
     loading,
     searchedTodos,
     totalTodos,
-    completeTodo,
     completedTodos,
     openModal,
     searchValue
-  } = states
+} = states
 
-  const {
+const {
     setOpenModal,
+    completeTodo,
     addTodo, 
     delteTodo,
     setSearchValue,
