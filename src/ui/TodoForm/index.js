@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom';
 
 function TodoForm(props) {
     const navigate = useNavigate()
-    const [newTodoValue, setNewTodoValue] = React.useState('');
+    const [newTodoValue, setNewTodoValue] = React.useState('')
 
     const onSubmit = (event) => {
         event.preventDefault();
-        props.submitEvent(newTodoValue);
+        props.submitEvent(newTodoValue)
         navigate('/')
     }
 

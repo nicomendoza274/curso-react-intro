@@ -27,7 +27,7 @@ function HomePage() {
     totalTodos,
     completedTodos,
     searchValue
-} = states
+  } = states
 
 const {
     completeTodo,
