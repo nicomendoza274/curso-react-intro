@@ -25,6 +25,7 @@ function useTodos() {
       return newTodos.findIndex(todo => todo.id === id)
     }
 
+
     const addTodo = (text) => {
       const id = newTodoId(todos)
       const newTodos = [...todos]
@@ -35,7 +36,12 @@ function useTodos() {
       })
       saveTodos(newTodos)
     }
-  
+
+    const getTodo = (id) => {
+      const todoIndex = todos.findIndex(todo => todo.id === id)
+      return todos[todoIndex]
+    }
+
     const completeTodo = (id) => {
       const newTodos = [...todos];
       const todoIndex = getNewTodoIndex(newTodos, id)
@@ -68,6 +74,7 @@ function useTodos() {
       completedTodos,
       searchValue,
       searchedTodos,
+      getTodo,
       // openModal,
     }
 
