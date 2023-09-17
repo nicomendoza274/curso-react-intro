@@ -1,20 +1,20 @@
 import React from 'react';
-import { useTodos } from './useTodos'
-import { TodoCounter } from '../TodoCounter'
-import { TodoSearch } from '../TodoSearch'
-import { CreateTodoButton } from '../CreateTodoButton'
-import { TodoForm } from '../TodoForm'
-import { TodoItem } from '../TodoItem'
-import { TodoList } from '../TodoList'
-import { TodosLoading } from '../TodosLoading'
-import { TodosError } from '../TodosError'
-import { EmptyTodos } from '../EmptyTodos'
-import { EmptySearchResults } from '../EmptySearchResults'
-import { TodoHeader } from '../TodoHeader'
-import { Modal } from '../Modal'
-import { ChangeAlert } from '../ChangeAlert'
+import { useTodos } from '../useTodos'
+import { TodoHeader } from '../../ui/TodoHeader'
+import { TodoCounter } from '../../ui/TodoCounter'
+import { TodoSearch } from '../../ui/TodoSearch'
+import { TodoList } from '../../ui/TodoList'
+import { TodoItem } from '../../ui/TodoItem'
+import { TodosError } from '../../ui/TodosError'
+import { EmptyTodos } from '../../ui/EmptyTodos'
+import { TodosLoading } from '../../ui/TodosLoading'
+import { TodoForm } from '../../ui/TodoForm'
+import { CreateTodoButton } from '../../ui/CreateTodoButton'
+import { EmptySearchResults } from '../../ui/EmptySearchResults'
+import { Modal } from '../../ui/Modal'
+import { ChangeAlert } from '../../ui/ChangeAlert'
 
-function App() {
+function HomePage() {
   const {
     states,
     stateUpdaters
@@ -96,4 +96,4 @@ const {
 }
 
 
-export default App;
+export { HomePage };
